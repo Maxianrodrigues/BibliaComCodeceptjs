@@ -1,0 +1,16 @@
+{
+  "name": "biblia-sagrada-codecept",
+  "version": "1.0.0",
+  "description": "projeto de testes no app biblia sagrada usando codeceptjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx codeceptjs run --steps",
+    "android": "npx codeceptjs run --steps --reporter mochawesome"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "^3.6.7",
+    "webdriverio": "^7.32.3"
+  }
+}

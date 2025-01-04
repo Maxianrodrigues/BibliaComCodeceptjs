@@ -1,0 +1,23 @@
+Nesse projeto estamos usando as dependências:
+  "dependencies": {
+    "codeceptjs": "^3.6.7",
+    "webdriverio": "^7.32.3"
+
+Exatamente nessas versões combinado com o appium 1.x que está na pasta desse documento
+
+
+variáveis de ambiente da minha maquina:
+ANDROID_HOME: C:\Users\maxia\AppData\Local\Android\Sdk
+JAVA_HOME: C:\Program Files\Java\jdk1.8.0_291
+
+variável de ambiente path:
+%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools
+%JAVA_HOME%\bin
+C:\Users\maxia\AppData\Local\Android\Sdk\platform-tools
+C:\Program Files\nodejs\
+
+Alem disso temos o nodejs instalado juntamente com o java jdk e android studio com o sdktools instalado juntamente com adb e etc.
+
+IDE: vscode
+
+Caso troque de maquina e precise configurar o projeto, abra o mesmo na IDE e realize npm install, esse comando vai lê o package.json e instalar as depencias do projeto.
