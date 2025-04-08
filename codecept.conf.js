@@ -11,15 +11,16 @@ setCommonPlugins();
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
-  /*tests: './steps/*_test.js',
+  tests: './steps/*_test.js',
   output: './output',
   helpers: {
     Appium: {
       appiumV2: true,
-      host: 'localhost',
+      //host: 'localhost',
+      host: '127.0.0.1',
       port: 4723,
       path: '/',
-      app: 'C:/Users/maxia/Documents/automacao/bibliaSagradaCodecept/apk/biblia.apk',
+      app: 'C:/Users/maxia/Documents/bibliaSagradaCodeceptAutomacao/apk/biblia.apk',
       platform: 'Android',
       desiredCapabilities: {
         'appium:automationName': 'UiAutomator2',
@@ -28,16 +29,17 @@ exports.config = {
         'appium:autoGrantPermissions': true,
         'appium:fullReset': false,
         'appium:noReset': true,
-        'appium:deviceName': 'Redmi Note 13',
-        'appium:platformVersion': '14',
+        //'appium:deviceName': 'Redmi Note 13',
+        'appium:deviceName': 'emulator-5554',
+        'appium:platformVersion': '8',
         'appium:enforceAppInstall': false,
         'appium:platformName': 'Android',
         'appium:forceAppLaunch': true,
       }
-    }*/
+    }
 
     //appium antigo
-    tests: './steps/*_test.js',
+    /*tests: './steps/*_test.js',
   output: './output',
   helpers: {
     Appium: {
@@ -56,7 +58,7 @@ exports.config = {
         platformName: 'Android',
         forceAppLaunch: true,
       }
-    }
+    }*/
 
   },
   include: {

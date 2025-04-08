@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "appium": "^2.17.1",
     "codeceptjs": "^3.6.7",
     "webdriverio": "^7.32.3"
+  },
+  "devDependencies": {
+    "appium-uiautomator2-driver": "^4.1.5"
   }
 }
