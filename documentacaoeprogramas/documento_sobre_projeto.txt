@@ -21,3 +21,13 @@ Alem disso temos o nodejs instalado juntamente com o java jdk e android studio c
 IDE: vscode
 
 Caso troque de maquina e precise configurar o projeto, abra o mesmo na IDE e realize npm install, esse comando vai lê o package.json e instalar as depencias do projeto.
+
+foi migrado para o appium v2:
+instalado appium v2: npm install appium
+instalado o driver do uiautomator2: npx appium driver install uiautomator2
+npx appium driver list: para verificar o driver instalado
+comando: curl http://localhost:4723/wd/hub/status para verificar se o servidor está acessivel
+alguns comandos foram alterados:
+para executar o appium:
+npx appium: esse comando vai abrir o server do appium v2
+npx appium -v para verificar a versão do appium
