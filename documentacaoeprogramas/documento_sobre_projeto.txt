@@ -31,3 +31,17 @@ alguns comandos foram alterados:
 para executar o appium:
 npx appium: esse comando vai abrir o server do appium v2
 npx appium -v para verificar a versão do appium
+
+CASO OCORRA ERROS PARA SUBIR O APPIUM TENTE SUBSTITUIR O UUID:
+npm install -g uuid@8
+
+solução acima não deu certo então fiz:
+npm uninstall -g appium
+npm install -g appium@2.12.1
+
+atualmente versões estaveis do codeceptjs e appium:
+Appium
+2.12.1
+
+CodeceptJS
+3.5.11

@@ -25,16 +25,19 @@ exports.config = {
       desiredCapabilities: {
         'appium:automationName': 'UiAutomator2',
         'appium:appPackage': 'devandroid.muller.bibliasagrada',
-        'appium:appActivity': 'view.SplashActivity',
+        'appium:appActivity': '.view.SplashActivity',
         'appium:autoGrantPermissions': true,
         'appium:fullReset': false,
         'appium:noReset': true,
         //'appium:deviceName': 'Redmi Note 13',
-        'appium:deviceName': 'emulator-5554',
-        'appium:platformVersion': '8',
+        'appium:deviceName': 'moto g52',
+        //'appium:deviceName': 'emulator-5554',
+        'appium:platformVersion': '13',
+        //'appium:platformVersion': '15',
         'appium:enforceAppInstall': false,
         'appium:platformName': 'Android',
         'appium:forceAppLaunch': true,
+        'appium:ignoreHiddenApiPolicyError': true
       }
     }
 
