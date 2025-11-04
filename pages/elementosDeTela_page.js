@@ -39,6 +39,9 @@ module.exports = {
     lblTituloDevocional: '#devandroid.muller.bibliasagrada:id/txtDevocionalDoDia',
     lblHinarioHC: '//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="HC"]',
     lblHinoQualquer: '#android:id/text1',
+    lblLivroQualquer: '#android:id/text1',
+    lblLivroApocalipse: '//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Apocalipse"]',
+    lblLivroGenesis: '//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Gênesis"]'
   },
 
   fields:{
@@ -91,7 +94,9 @@ module.exports = {
 
   preencherNumeroHino(numeroHino){
     I.waitForElement(this.fields.fieldDigiteNumeroHino, 5)
-    I.fillField(this.fields.fieldDigiteNumeroHino, numeroHino)
+    //I.fillField(this.fields.fieldDigiteNumeroHino, numeroHino)
+    I.click(this.fields.fieldDigiteNumeroHino)
+    I.type(numeroHino)
   },
 
   validarTextoTituloHino(tituloHino){
@@ -279,6 +284,36 @@ module.exports = {
       I.click(this.checkbox.chkMarcarFavorito)
     }
 
+  },
+
+  async deslizarSpinnerLivrosAteUltimoLivro(){
+    I.waitForElement(this.labels.lblLivroQualquer, 5)
+
+    for (let i = 0; i < 80; i++) {
+      I.swipeUp(this.labels.lblLivroQualquer, 105, 900)
+      const elemento = await I.grabNumberOfVisibleElements(this.labels.lblLivroApocalipse)
+
+      if (elemento > 0) {
+        I.click(this.labels.lblLivroApocalipse)
+        break
+      }
+      
+    }
+  },
+
+  async deslizarSpinnerLivrosAtePrimeiroLivro(){
+    I.waitForElement(this.labels.lblLivroQualquer, 5)
+
+    for (let i = 0; i < 80; i++) {
+      I.swipeDown(this.labels.lblLivroQualquer, 105, 900)
+      const elemento = await I.grabNumberOfVisibleElements(this.labels.lblLivroGenesis)
+
+      if (elemento > 0) {
+        I.click(this.labels.lblLivroGenesis)
+        break
+      }
+      
+    }
   }
 
 }

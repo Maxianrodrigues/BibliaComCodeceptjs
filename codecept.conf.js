@@ -2,17 +2,27 @@ const {
   setHeadlessWhen,
   setCommonPlugins
 } = require('@codeceptjs/configure');
+const { output } = require('codeceptjs');
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
 
 // enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
-setCommonPlugins();
+setCommonPlugins({
+  allure: false
+});
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
   tests: './steps/*_test.js',
   output: './output',
+  plugins: {
+    allure: {
+      enabled: true,
+      require: 'allure-codeceptjs',
+      resultsDir: 'output/allure-results',
+    }
+  },
   helpers: {
     Appium: {
       appiumV2: true,

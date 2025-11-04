@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "npx codeceptjs run --steps",
+    "test:devocional": "npx codeceptjs run ./steps/modulodevocional_test.js --verbose",
     "android": "npx codeceptjs run --steps --reporter mochawesome"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "appium": "2.12.1",
-    "codeceptjs": "3.6.10",
     "webdriverio": "7.32.3"
   },
   "devDependencies": {
-    "appium-uiautomator2-driver": "4.1.5"
+    "allure-codeceptjs": "^3.4.2",
+    "appium-uiautomator2-driver": "4.1.5",
+    "codeceptjs": "3.7.5"
   }
 }

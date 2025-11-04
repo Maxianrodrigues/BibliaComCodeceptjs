@@ -9,8 +9,6 @@ Scenario('Validacao modulo biblia',  async ({ I }) => {
     elementosDeTela_page.acessarBiblia()
     elementosDeTela_page.aumentarZoomFonteDevocional()
     elementosDeTela_page.diminuirZoomFonteDevocional()
-    elementosDeTela_page.clicarNoSpinnerLivros()
-    elementosDeTela_page.voltarViaBackButtonEvent()
     elementosDeTela_page.clicaNoSpinnerCapitulos()
     elementosDeTela_page.voltarViaBackButtonEvent()
     elementosDeTela_page.clicaNoSpinnerBibliasVersoes()
@@ -26,4 +24,8 @@ Scenario('Validacao modulo biblia',  async ({ I }) => {
     elementosDeTela_page.avancarPagina()
     elementosDeTela_page.retrocedePagina()
     await elementosDeTela_page.marcarCapitulComoLido()
+    elementosDeTela_page.clicarNoSpinnerLivros()
+    await elementosDeTela_page.deslizarSpinnerLivrosAteUltimoLivro()
+    elementosDeTela_page.clicarNoSpinnerLivros()
+    await elementosDeTela_page.deslizarSpinnerLivrosAtePrimeiroLivro()
 });
