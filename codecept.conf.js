@@ -2,17 +2,27 @@ const {
   setHeadlessWhen,
   setCommonPlugins
 } = require('@codeceptjs/configure');
+const { output } = require('codeceptjs');
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
 
 // enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
-setCommonPlugins();
+setCommonPlugins({
+  allure: false
+});
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
   tests: './steps/*_test.js',
   output: './output',
+  plugins: {
+    allure: {
+      enabled: true,
+      require: 'allure-codeceptjs',
+      resultsDir: 'output/allure-results',
+    }
+  },
   helpers: {
     Appium: {
       appiumV2: true,
@@ -25,16 +35,19 @@ exports.config = {
       desiredCapabilities: {
         'appium:automationName': 'UiAutomator2',
         'appium:appPackage': 'devandroid.muller.bibliasagrada',
-        'appium:appActivity': 'view.SplashActivity',
+        'appium:appActivity': '.view.SplashActivity',
         'appium:autoGrantPermissions': true,
         'appium:fullReset': false,
         'appium:noReset': true,
         //'appium:deviceName': 'Redmi Note 13',
-        'appium:deviceName': 'emulator-5554',
-        'appium:platformVersion': '8',
+        'appium:deviceName': 'moto g52',
+        //'appium:deviceName': 'emulator-5554',
+        'appium:platformVersion': '13',
+        //'appium:platformVersion': '15',
         'appium:enforceAppInstall': false,
         'appium:platformName': 'Android',
         'appium:forceAppLaunch': true,
+        'appium:ignoreHiddenApiPolicyError': true
       }
     }
 
