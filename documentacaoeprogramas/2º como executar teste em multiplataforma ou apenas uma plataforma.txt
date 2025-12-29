@@ -1,0 +1,63 @@
+Ah duas formas de configurar o codecepts.json para informar a plataforma, caminho da aplicação, capabilities.
+sendo a primeira forma, informando os dados dentro do codecepts.json da seguinte forma:
+
+exports.config = {
+  tests: './*_test.js',
+  output: './output',
+  helpers: {
+    Appium: {
+      app: 'C:/Users/maxia/Downloads/app-release.apk',
+      platform: 'Android',
+      desiredCapabilities: {
+        appPackage: "com.qazandoapp",
+        appActivity: "MainActivity",
+        deviceName: "Pixel2",
+        plataformVersion: "9",
+      }
+    }
+  },
+  include: {
+    I: './steps_file.js'
+  },
+  bootstrap: null,
+  mocha: {},
+  name: 'qazando-automation',
+  translation: 'pt-BR',
+  plugins: {
+    pauseOnFail: {},
+    retryFailedStep: {
+      enabled: true
+    },
+    tryTo: {
+      enabled: true
+    },
+    screenshotOnFail: {
+      enabled: true
+    }
+  }
+}
+##################################################################
+
+
+Já a segunda forma é utilizada para testar em mais de uma plataforma sendo android e Ios, então a configuração para este modo que facilita é assim:
+
+no package.json
+defina:
+"scripts": {
+    "test": "npx codeceptjs run --steps",
+    "Android": "PLATFORM=Android APP='C:/Users/maxia/Downloads/app-release.apk' DEVICE=Pixel2 VERSION=9 PACKAGE=com.qazandoapp ACTIVITY=MainActivity npx codeceptjs run --steps",
+    "ios": "PLATFORM=Android APP='C:/Users/maxia/Downloads/app-release.apk' DEVICE=Pixel2 VERSION=9 PACKAGE=com.qazandoapp ACTIVITY=MainActivity npx codeceptjs run --steps"
+  },
+  
+no codeceptjs.json defina:
+
+ Appium: {
+      app: process.env.APP,
+      platform: process.env.PLATFORM,
+      desiredCapabilities: {
+        appPackage: process.env.PLATFOMR = 'Android' ? process.env.PACKAGE :"",
+        appActivity: process.env.PLATFOMR = 'Android' ? process.env.ACTIVITY :"",
+        deviceName: process.env.DEVICE,
+        plataformVersion: process.env.VERSION,
+		
+Para executar o teste rode: npm run Androd ou ios

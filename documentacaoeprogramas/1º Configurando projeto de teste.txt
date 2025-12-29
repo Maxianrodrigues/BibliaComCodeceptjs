@@ -1,0 +1,33 @@
+1º Criar a pasta onde vai ser configurado o projeto
+
+2º dentro da pasta criada via cmd, execute o comando: (npm init) para configurar o package.json, preencha apenas a descrição e os demais campos apenas dê enter.
+
+3º Abra o visual code e abra o projeto na pasta que foi criada
+
+4º Abra o terminal no visual code na pasta do projeto e instale o codecepts.js e o webdriverio localmente no projeto através do comando: (npm install codeceptjs webdriverio --save
+
+obs: esses comandos estão la no https://codecept.io/mobile/#setting-up (guia mobile testing)
+
+obs2: se caso mudar de maquina e precisar instalar as depencias do projeto sem precisar fazer tudo manualmente, basta abrir o projeto no visual code e abrir o terminal e executar o comando npm install que ele vai lê o package.json e instalar todas dependencias do projeto
+
+mas é necessário instalar o nodjs e configurar sua variavel de ambiente além de instalar o appium desktop, visual studio code, java jdk e configurar suas variaveis de ambiente JAVA_HOME.
+Também é necessário configurar a varivavel de ambiente: ANDROID_HOME com o caminho do sdk
+
+instalar appium doctor para verificação do ambiente: 
+npm i -g appium-doctor
+comando: appium-doctor
+
+no path de variaveis do sistema:
+%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools
+%JAVA_HOME%\bin
+C:\Program Files\nodejs\
+C:\Users\maxia\AppData\Local\Android\Sdk\platform-tools
+
+5º configurando o codeceptjs no projeto, execute o comando (npx codeceptjs init) para que possamos configurar o projeto
+
+
+6º para executar um teste use o comando (npx codeceptjs run --steps) com isso todos os testes criados com o final do nome test.js vão ser executados 
+
+7º para criar um novo arquivo (feature de teste) execute o comando: ((npx codeceptjs gt))  (gt de generate) para criar
+
+8º para criar um novo arquivo (page objects) execute o comando: ((npx codeceptjs gpo))  (gpo de generate psge objects) para criar

@@ -15,7 +15,7 @@
     "webdriverio": "7.32.3"
   },
   "devDependencies": {
-    "allure-codeceptjs": "^3.4.2",
+    "allure-codeceptjs": "3.4.2",
     "appium-uiautomator2-driver": "4.1.5",
     "codeceptjs": "3.7.5"
   }

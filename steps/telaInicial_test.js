@@ -2,6 +2,7 @@ Feature('telaInicial');
 
 const{I, elementosDeTela_page} = inject()
 
+//CENARIOS VALIDANDO A TELA INICIAL DO APP
 Scenario('Navegando entre modulos biblia e hinario @test',  ({ I }) => {
     elementosDeTela_page.acessarBiblia()
     elementosDeTela_page.voltarTelaViaBotaoBack()
